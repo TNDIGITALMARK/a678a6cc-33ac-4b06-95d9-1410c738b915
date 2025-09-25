@@ -1,39 +1,54 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Georgia:ital,wght@0,400;0,700;1,400&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap');
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here.
 All colors MUST be HSL.
+Mom's Spaghetti Italian-American Restaurant Theme
 */
 
 :root {
-  --background: 0 0% 100%;
-  --foreground: 222.2 84% 4.9%;
+  /* Mom's Spaghetti Italian-American Theme Colors */
+  --background: 60 50% 96%; /* Warm cream #FFF8DC converted to HSL */
+  --foreground: 30 25% 27%; /* Rich brown #8B4513 converted to HSL */
 
-  --card: 0 0% 100%;
-  --card-foreground: 222.2 84% 4.9%;
+  --card: 60 50% 96%; /* Warm cream */
+  --card-foreground: 30 25% 27%; /* Rich brown */
 
-  --popover: 0 0% 100%;
-  --popover-foreground: 222.2 84% 4.9%;
+  --popover: 60 50% 96%; /* Warm cream */
+  --popover-foreground: 30 25% 27%; /* Rich brown */
 
-  --primary: 222.2 47.4% 11.2%;
-  --primary-foreground: 210 40% 98%;
+  --primary: 355 74% 47%; /* Tomato red #C41E3A converted to HSL */
+  --primary-foreground: 60 50% 96%; /* Warm cream */
 
-  --secondary: 210 40% 96.1%;
-  --secondary-foreground: 222.2 47.4% 11.2%;
+  --secondary: 120 60% 34%; /* Basil green #228B22 converted to HSL */
+  --secondary-foreground: 60 50% 96%; /* Warm cream */
 
-  --muted: 210 40% 96.1%;
-  --muted-foreground: 215.4 16.3% 46.9%;
+  --muted: 30 25% 92%; /* Lighter warm cream */
+  --muted-foreground: 30 25% 47%; /* Medium brown */
 
-  --accent: 210 40% 96.1%;
-  --accent-foreground: 222.2 47.4% 11.2%;
+  --accent: 355 74% 47%; /* Tomato red accent */
+  --accent-foreground: 60 50% 96%; /* Warm cream */
 
   --destructive: 0 84.2% 60.2%;
   --destructive-foreground: 210 40% 98%;
 
-  --border: 214.3 31.8% 91.4%;
-  --input: 214.3 31.8% 91.4%;
-  --ring: 222.2 84% 4.9%;
+  --border: 30 25% 85%; /* Light brown border */
+  --input: 30 25% 85%; /* Light brown input */
+  --ring: 355 74% 47%; /* Tomato red ring */
 
   --radius: 0.5rem;
+
+  /* Mom's Spaghetti Restaurant Specific Variables */
+  --restaurant-tomato: 355 74% 47%; /* Tomato red #C41E3A */
+  --restaurant-cream: 60 50% 96%; /* Warm cream #FFF8DC */
+  --restaurant-brown: 30 25% 27%; /* Rich brown #8B4513 */
+  --restaurant-basil: 120 60% 34%; /* Basil green #228B22 */
+  --restaurant-gold: 45 100% 50%; /* Accent gold */
+
+  /* Typography */
+  --font-family-script: 'Dancing Script', cursive;
+  --font-family-serif: 'Georgia', serif;
+  --font-family-sans: 'Open Sans', sans-serif;
 
   --sidebar-background: 0 0% 98%;
   --sidebar-foreground: 240 5.3% 26.1%;
@@ -160,4 +175,65 @@ All colors MUST be HSL.
 body {
   background-color: hsl(var(--background));
   color: hsl(var(--foreground));
+}
+
+/* Mom's Spaghetti Restaurant Utility Classes */
+.font-script {
+  font-family: var(--font-family-script);
+}
+
+.font-serif {
+  font-family: var(--font-family-serif);
+}
+
+.font-sans {
+  font-family: var(--font-family-sans);
+}
+
+.text-tomato {
+  color: hsl(var(--restaurant-tomato));
+}
+
+.text-cream {
+  color: hsl(var(--restaurant-cream));
+}
+
+.text-brown {
+  color: hsl(var(--restaurant-brown));
+}
+
+.text-basil {
+  color: hsl(var(--restaurant-basil));
+}
+
+.bg-tomato {
+  background-color: hsl(var(--restaurant-tomato));
+}
+
+.bg-cream {
+  background-color: hsl(var(--restaurant-cream));
+}
+
+.bg-brown {
+  background-color: hsl(var(--restaurant-brown));
+}
+
+.bg-basil {
+  background-color: hsl(var(--restaurant-basil));
+}
+
+.border-tomato {
+  border-color: hsl(var(--restaurant-tomato));
+}
+
+.hero-gradient {
+  background: linear-gradient(135deg,
+    hsl(var(--restaurant-tomato) / 0.9) 0%,
+    hsl(var(--restaurant-brown) / 0.8) 100%);
+}
+
+.warm-gradient {
+  background: linear-gradient(135deg,
+    hsl(var(--restaurant-cream)) 0%,
+    hsl(var(--restaurant-cream) / 0.95) 100%);
 }
